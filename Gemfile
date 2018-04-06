@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby 2.5.1p57
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -51,7 +53,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :development do
+group :production do
   gem 'pg'
 end
 
