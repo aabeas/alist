@@ -1,0 +1,22 @@
+<nav class="container navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff;">
+  <%= link_to root_path do %>
+    <%= image_tag "icon-al-1024.png", width: '35', alt: "Alist Logo", class: 'navbar-brand d-inline-block align-bottom' %>
+  <% end %>
+  <%= link_to "Alist", root_path, class: "navbar-brand", id: "blog-header-logo" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <%= nav_helper 'nav-link', 'li' %>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Todos</a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+          <%= link_to "Todos", todos_path, class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Create a todo", new_todo_path, class:"dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
