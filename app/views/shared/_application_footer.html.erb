@@ -1,5 +1,17 @@
-<footer class="container">
-  <div class="">
-    <p><%= copyright_generator %></p>
+<footer class="container py-5">
+  <div class="row pl-3">
+    <div class="col-12 col-md">
+      <small class="d-block text-muted pb-3"><%= copyright_generator %></small>
+    </div>
+    <div class="col-6 col-md offset-md-4">
+      <h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><%= link_to "Team", about_us_path, class:"text-muted" %></li>
+        <li><%= link_to "Locations", locations_path, class:"text-muted" %></li>
+        <li><%= link_to "Support", support_path, class:"text-muted" %></li>
+        <li><%= link_to "Privacy", privacy_path, class:"text-muted" %></li>
+        <li><%= link_to "Terms", terms_path, class:"text-muted" %></li>
+      </ul>
+    </div>
   </div>
 </footer>

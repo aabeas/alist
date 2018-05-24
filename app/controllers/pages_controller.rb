@@ -3,10 +3,17 @@ class PagesController < ApplicationController
   end
 
   def about
-
   end
 
   def support
+  end
+  
+  def locations
+  end
 
+  def privacy
+  end
+
+  def terms
   end
 end

@@ -9,14 +9,6 @@ module ApplicationHelper
       {
         url: root_path,
         title: 'Home'
-      },
-      {
-        url: about_us_path,
-        title: 'About Us'
-      },
-      {
-        url: support_path,
-        title: 'Support'
       }
     ]
 
