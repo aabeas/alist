@@ -1,10 +1,9 @@
-<h1>Showing a Todo</h1>
+<%= render 'shared/page_title', title: @todo.name %>
 
 <p>
-  N - <%= @todo.name  %>
-<br>
   D - <%= @todo.description  %>
 </p>
+<div align='right'><small>Posted by <%= @todo.user.name.capitalize %> <%= time_ago_in_words(@todo.created_at) %> ago</small></div>
 <p>
   <%= link_to "Edit", edit_todo_path(@todo) %> | <%= link_to "Back", todos_path(@todo) %>
 </p>

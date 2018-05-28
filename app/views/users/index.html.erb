@@ -1,0 +1,20 @@
+<%= render 'shared/page_title', title: "Users' Listing" %>
+
+<%= will_paginate class: "text-center" %></br>
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+      <ul class="listing mx-auto">
+        <div class="text-center">
+          <li class="chef-title"><%= link_to user.name.capitalize, user_path(user) %></li>
+          <li><small><%= pluralize(user.todos.count, "todo") if user.todos %></small></li>
+          <% if logged_in? && current_user.admin? && !user.admin?%>
+            <li><%= link_to "Delete", user_path(user), method: :delete,
+            data: {confirm: "Are you shure you want to delete the user and all associated todos?"} %></li>
+          <% end %>
+        </div>
+      </ul>
+    <% end %>
+  </div>
+</div>
+<%= will_paginate class: "text-center" %>

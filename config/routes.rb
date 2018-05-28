@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   get '/privacy', to: 'pages#privacy'
   get '/terms', to: 'pages#terms'
 
+  get '/signup', to: 'chefs#new'
+  resources :users, except: [:new]
+
   resources :todos
 
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end

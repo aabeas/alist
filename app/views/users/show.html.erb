@@ -1,0 +1,15 @@
+<%= render 'shared/page_title', title: "#{@user.name}'s profile" %>
+
+<div class="row">
+  <div class="mx-auto"><small>Member since <%= time_ago_in_words(@user.created_at) %> ago</small></div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <br>
+    <h4 align="center"> Contributions </h5>
+    <%= will_paginate @user_todos, class: "text-center" %>
+    <%= render 'todos/todo', obj: @user_todos %>
+    <%= will_paginate @user_todos, class: "text-center" %>
+  </div>
+</div>

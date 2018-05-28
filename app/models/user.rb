@@ -7,5 +7,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
-  has_many :todos
+  has_many :todos, dependent: :destroy
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 5 }, allow_nil: true
+  default_scope -> { order(updated_at: :desc)}
 end

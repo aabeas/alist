@@ -1,0 +1,46 @@
+<%= render 'shared/application_errors', obj: @user %>
+
+<div class="text-center text-muted col-md-12 mr-auto">
+  <!-- [ <%= link_to "Have an account?", login_path %> ] -->
+</div>
+
+<%= form_for(@user, :html => {class: "col-md-12 mr-auto", role: "form"}) do |f| %>
+
+<div class="form-group row">
+  <%= f.label :name, "User Name", class: "col-md-12 col-form-label col-form-label-sm" %>
+  <div class="col-md-12">
+    <%= f.text_field :name, class: "form-control form-control-sm", autofocus: true %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :email, class: "col-md-12 col-form-label col-form-label-sm" %>
+  <div class="col-md-12">
+    <%= f.email_field :email, class: "form-control form-control-sm" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :password, class: "col-md-12 col-form-label col-form-label-sm" %>
+  <div class="col-md-12">
+    <%= f.password_field :password, class: "form-control form-control-sm" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :password_confirmation, "Confirm Password", class: "col-md-12 col-form-label col-form-label-sm" %>
+  <div class="col-md-12">
+    <%= f.password_field :password_confirmation, class: "form-control form-control-sm" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.submit(@user.new_record? ? "Create my account" :  "Update my account", class: "btn btn-primary btn-xlarge") %>
+</div>
+
+<div class="form-group text-muted">
+  [ <%= link_to "Cancel", root_path %> ]
+</div>
+
+<% end %>
+</div>

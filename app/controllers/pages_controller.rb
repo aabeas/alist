@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    redirect_to todos_path if logged_in?
   end
 
   def about
@@ -7,7 +8,7 @@ class PagesController < ApplicationController
 
   def support
   end
-  
+
   def locations
   end
 
