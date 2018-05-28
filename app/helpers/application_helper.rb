@@ -7,10 +7,6 @@ module ApplicationHelper
   def nav_items
     [
       {
-        url: root_path,
-        title: 'Home'
-      },
-      {
         url: users_path,
         title: 'Users'
       }

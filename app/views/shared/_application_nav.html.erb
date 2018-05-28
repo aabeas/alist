@@ -9,6 +9,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <%= nav_helper 'nav-link', 'li' %>
+      <% if logged_in? %>
       <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Todos</a>
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
@@ -17,6 +18,23 @@
           <%= link_to "Create a todo", new_todo_path, class:"dropdown-item" %>
         </div>
       </li>
+      <% end %>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+      <% if logged_in? %>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle show" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.name.titleize %>'s Profile <%= "Admin" if current_user.admin? %> </a>
+          <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+            <%= link_to "View your profile", user_path(current_user), class:"dropdown-item" %>
+            <%= link_to "Edit your profile", edit_user_path(current_user), class:"dropdown-item" %>
+            <%= link_to "Something else here", root_path, class:"dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Log out", logout_path, method: :delete, class:"dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <%= link_to "Log in", login_path, class:"nav-link" %>
+      <% end %>
     </ul>
   </div>
 </nav>

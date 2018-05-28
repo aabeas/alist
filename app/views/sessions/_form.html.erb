@@ -1,0 +1,25 @@
+<%= form_for(:session, :html => {class: "col-md-12 mr-auto", role: "form"}, url: login_path) do |f| %>
+
+<div class="form-group row">
+  <%= f.label :email, class: "col-md-12 col-form-label col-form-label-sm" %>
+  <div class="col-md-12">
+    <%= f.email_field :email, class: "form-control form-control-sm", placeholder: "Enter your email" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :password, class: "col-md-12 col-form-label col-form-label-sm" %>
+  <div class="col-md-12">
+    <%= f.password_field :password, class: "form-control form-control-sm", placeholder: "Enter your password" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.submit "Log In", class: "btn btn-primary btn-xlarge" %>
+</div>
+
+<div class="text-center text-muted">
+  [ <%= link_to "Don't have an account? Sign up now!", signup_path %> ]
+</div>
+
+<% end %>
