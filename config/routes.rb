@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/privacy', to: 'pages#privacy'
   get '/terms', to: 'pages#terms'
 
-  get '/signup', to: 'chefs#new'
+  get '/signup', to: 'users#new'
   resources :users, except: [:new]
 
   resources :todos
@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  resources :password_resets
 end

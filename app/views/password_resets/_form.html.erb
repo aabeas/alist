@@ -1,0 +1,15 @@
+<!-- form_for(:session, :html => {class: "col-md-12 mr-auto", role: "form"}, url: password_resets_path) do |f| -->
+<%= form_tag password_resets_path, :method => :post do %>
+
+<div class="form-group row">
+  <%= label_tag(:email) %>
+  <div class="col-md-12">
+    <%= email_field_tag(:email) %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= submit_tag("Reset Password") %>
+</div>
+
+<% end %>
